@@ -1,7 +1,12 @@
-const { Sequelize } = require('sequelize');
-
-const sequelize = new Sequelize('mysql', 'root', 'docker', {
-  dialect: 'mysql',
-});
-
-module.exports = sequelize;
+module.exports = {
+  dialect: 'postgres',
+  host: 'localhost',
+  username: 'postgres',
+  password: 'docker',
+  database: 'asin_api',
+  define: {
+    timestamps: true,
+    underscored: true,
+    underscoredAll: true,
+  },
+};

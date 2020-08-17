@@ -1,8 +1,8 @@
-import Sequelize from "sequelize";
+import Sequelize from 'sequelize';
 
-import databaseConfig from "../config/config";
+import databaseConfig from '../config/config';
 
-import Pokemon from "../app/models/Pokemon";
+import Pokemon from '../app/models/Pokemon';
 
 const models = [Pokemon];
 
@@ -13,6 +13,7 @@ class Database {
   init() {
     this.connection = new Sequelize(databaseConfig);
 
+    // models.map((model) => model.init(this.connection));
     models.map((model) => model.init(this.connection));
   }
 }
